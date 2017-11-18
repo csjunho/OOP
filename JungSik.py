@@ -15,20 +15,6 @@ source = html.read()
 
 html.close()
 
-# MySQL Connection 연결
-conn = pymysql.connect(host='13.124.175.104', user='root', password='daisy7962', db='cafeteria', charset='utf8')
-
-curs = conn.cursor()
-
-sql = "select * from Menu"
-curs.execute(sql)
-
-rows = curs.fetchall()
-print(rows) 
-
-conn.close()
-
-
 soup = BeautifulSoup(source, "lxml")
 
 temp3=soup.get_text()
